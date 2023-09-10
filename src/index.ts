@@ -4,6 +4,7 @@ import { env } from './utils/env';
 import cors from 'cors';
 import router from './router';
 import WebSocket from 'ws';
+import { userQuery } from './model/user.model';
 
 
 const app = express();
@@ -27,6 +28,7 @@ pool.connect().then(async (client) => {
     if (result.rowCount === 0) {
         await client.query(`CREATE DATABASE ${env.db.database}`);
     }
+    await client.query(userQuery);
     client.release();
     pool.end();
 });
