@@ -1,0 +1,33 @@
+# Project Name
+
+    Matcha - Dating website
+
+## Description
+
+    This project is about creating a dating website.
+    The app will allow two potential lovers to meet, from the registration to the final encounter.
+    A user will then be able to register, connect, fill his/her profile, search and look into the profile of other users, like them, chat with those that “liked” back.
+    The project is divided into three parts:
+    - The website: the user will be able to register, connect, fill his/her profile, search and look into the profile of other users, like them, chat with those that “liked” back.
+    - The server: it will manage the HTTP requests and the Websocket connections, between the website and the app.
+
+## backend
+
+    The backend is written in Node.js and uses Express.js as a framework.
+    It uses a Postgres sql database to store the data.
+    It uses Socket.io to manage the websocket connections.
+     -- type script:
+        pnpm install -g typescript
+        tsc --init
+        tsc -w
+    -- nodemon:
+        pnpm install -g nodemon
+        nodemon dist/index.js
+    -- eslint:
+        pnpm install -g eslint
+        eslint --init
+        eslint --fix src/index.ts
+    -- prettier:
+        pnpm install -g prettier
+        prettier --write src/index.ts
+    -- husky:
