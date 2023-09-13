@@ -13,9 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static('public'));
 
-//////
+////// route/////////////
 app.use('/api',router)
-//////
+
+
+
 app.listen(env.port, () => {
     console.log(`Server is listening on port ${env.port}`);
 }
