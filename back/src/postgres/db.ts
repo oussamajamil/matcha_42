@@ -6,7 +6,8 @@ const pool = new Pool({
     user: env.db.userName,
     host: env.db.host,
     password: env.db.password,
-    port: +env.db.port
+    port: +env.db.port,
+    database: env.db.database,
 });
 
 
