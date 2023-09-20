@@ -9,8 +9,9 @@ export default {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: ['*.ts}'],
       parserOptions: {
+        project: ['./tsconfig.json'],
         sourceType: 'script',
       },
     },
@@ -19,5 +20,12 @@ export default {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
+  plugins: ['@typescript-eslint', 'prettier'],
+  rules: {
+    'prettier/prettier': ['error'],
+    'space-before-function-paren': 'off',
+    '@typescript-eslint/space-before-function-paren': ['error'],
+    'import/extensions': [0],
+    'class-methods-use-this': [0],
+  },
 };

@@ -4,6 +4,7 @@ import { env } from './utils/env';
 import cors from 'cors';
 import router from './router';
 import WebSocket from 'ws';
+import { handlerAllException } from './middleware/all_error';
 
 
 
@@ -13,10 +14,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static('public'));
 
-////// route/////////////
+
+
+////// ----- route ---/////////////
 app.use('/api',router)
 
 
+///middleware////
+app.use(handlerAllException)
 
 app.listen(env.port, () => {
     console.log(`Server is listening on port ${env.port}`);

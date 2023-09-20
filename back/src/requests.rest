@@ -1,0 +1,12 @@
+###
+GET http://localhost:3000/api/user?where={"OR":[{"first_name":"oussama"},{"last_name":"Jane"}],"username":"ojamil","id":{"lte": 10}}&take=10
+
+
+###
+POST http://localhost:3000/api/auth/login
+
+
+{
+    "email": "oussamajamil01@gmail.com",
+    "password": "12345678"
+}
